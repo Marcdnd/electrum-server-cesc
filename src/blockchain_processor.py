@@ -81,7 +81,7 @@ class BlockchainProcessor(Processor):
         while not self.shared.stopped():
             self.main_iteration()
             if self.shared.paused():
-                print_log("litecoind is responding")
+                print_log("cryptoescudod is responding")
                 self.shared.unpause()
             time.sleep(10)
 
@@ -116,13 +116,13 @@ class BlockchainProcessor(Processor):
                 respdata = connection.read()
                 connection.close()
             except:
-                print_log("cannot reach litecoind...")
+                print_log("cannot reach cryptoescudod...")
                 self.wait_on_bitcoind()
             else:
                 r = loads(respdata)
                 if r['error'] is not None:
                     if r['error'].get('code') == -28:
-                        print_log("litecoind still warming up...")
+                        print_log("cryptoescudod still warming up...")
                         self.wait_on_bitcoind()
                         continue
                     raise BaseException(r['error'])
@@ -595,14 +595,14 @@ class BlockchainProcessor(Processor):
                 respdata = connection.read()
                 connection.close()
             except:
-                logger.error("litecoind error (getfullblock)")
+                logger.error("cryptoescudod error (getfullblock)")
                 self.wait_on_bitcoind()
                 continue
             try:
                 r = loads(respdata)
                 rawtxdata = []
                 for ir in r:
-                    assert ir['error'] is None, "Error: make sure you run litecoind with txindex=1; use -reindex if needed."
+                    assert ir['error'] is None, "Error: make sure you run cryptoescudod with txindex=1; use -reindex if needed."
                     rawtxdata.append(ir['result'])
             except BaseException as e:
                 logger.error(str(e))
