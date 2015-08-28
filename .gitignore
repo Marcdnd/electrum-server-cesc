@@ -1,0 +1,8 @@
+*.pyc
+dist/
+electrum_server_cesc.egg-info
+build/
+dist/
+electrum_server_cesc.egg-info/
+nohup.out
+mypy/
