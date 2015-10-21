@@ -19,6 +19,7 @@ banner_file = /etc/electrum-cesc.banner
 #ssl_keyfile = /path/to/electrum-server.key
 logfile = /var/log/electrum-cesc.log
 donation_address = Cd9CgzTChm9yJQZ3SL3PUSsMkEEN8LGwCF
+max_subscriptions = 100
 
 [leveldb]
 # path to your database
