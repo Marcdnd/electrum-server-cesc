@@ -2,7 +2,7 @@ Electrum-server for the Electrum client
 =========================================
 
   * Authors: Thomas Voegtlin (ThomasV on the bitcointalk forum)
-  * Cryptoescudo features: Marcdnd (marcdnd on [cryptoescudotalk.org](http://cryptoescudotalk.org) forum)
+  * Cryptoescudo features: Marcdnd (marcdnd on [cryptoescudotalk.com](http://cryptoescudotalk.com) forum)
   * Language: Python
 
 Features
