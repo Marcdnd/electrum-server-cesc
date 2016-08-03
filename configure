@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # check root
 if [ ! "$(id -u)" == "0" ]; then
@@ -52,7 +53,7 @@ fi
 
 
 # read path from config
-default_path="/var/electrum-server"
+default_path="/var/electrum-server-cesc"
 path=$(read_config "path")
 if ! [ "$path" ]; then
     read -p "Path for database (default: $default_path) " -r
@@ -65,7 +66,7 @@ if ! [ "$path" ]; then
 fi
 
 # read path from config
-default_logfile="/var/log/electrum.log"
+default_logfile="/var/log/electrum-cesc.log"
 logfile=$(read_config "logfile")
 if ! [ "$logfile" ]; then
     read -p "Path of logfile (default: $default_logfile) " -r
@@ -91,7 +92,7 @@ fi
 #    echo
 #    if [[ $REPLY =~ ^[Yy]$ ]]; then
 #	mkdir -p $path
-#	wget -O - "http://foundry.electrum.org/leveldb-dump/electrum-fulltree-100-latest.tar.gz" | tar --extract --gunzip --strip-components 1 --directory $path --file -
+#	wget -O - "http://foundry.electrum-ltc.org/leveldb-dump/electrum-fulltree-100-latest.tar.gz" | tar --extract --gunzip --strip-components 1 --directory $path --file -
 #    fi
 #fi
 
@@ -109,13 +110,13 @@ chown $user:$user $logfile
 
 bitcoind_user=$(read_config "bitcoind_user")
 if ! [ "$bitcoind_user" ]; then
-    read -p "rpcuser (from your bitcoin.conf file): " -r
+    read -p "rpcuser (from your cryptoescudo.conf file): " -r
     write_config "bitcoind_user" $REPLY
 fi
 
 bitcoind_password=$(read_config "bitcoind_password")
 if ! [ "$bitcoind_password" ]; then
-    read -p "rpcpassword (from your bitcoin.conf file): " -r
+    read -p "rpcpassword (from your cryptoescudo.conf file): " -r
     write_config "bitcoind_password" $REPLY
 fi
 
@@ -124,4 +125,4 @@ fi
 echo "Configuration written to $electrum_config."
 echo "Please edit this file to finish the configuration."
 echo "If you have not done so, please run 'python setup.py install'"
-echo "Then, run 'electrum-server' to start the daemon"
+echo "Then, run 'electrum-server-cesc' to start the daemon"

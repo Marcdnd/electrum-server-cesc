@@ -1,10 +1,10 @@
 from setuptools import setup
 
 setup(
-    name="electrum-server-cesc",
-    version="1.0",
-    scripts=['run_electrum_server_cesc','electrum-server-cesc'],
-    install_requires=['plyvel','jsonrpclib', 'irc>=11'],
+    name="electrum-server-cesc", 
+    version="1.0.20160803",
+    scripts=['run_electrum_cesc_server.py','electrum-server-cesc'],
+    install_requires=['plyvel','jsonrpclib', 'irc >= 11, <=14.0'],
     package_dir={
         'electrumservercesc':'src'
         },
@@ -19,15 +19,12 @@ setup(
         'electrumservercesc.processor',
         'electrumservercesc.version',
         'electrumservercesc.ircthread',
-        'electrumservercesc.stratum_tcp',
-        'electrumservercesc.stratum_http'
+        'electrumservercesc.stratum_tcp'
     ],
     description="Cryptoescudo Electrum Server",
-    author="Thomas Voegtlin (thomasv1@gmx.de) / Marcdnd (CESC)",
+    author="Marcdnd",
     author_email="marcdnd@gmail.com",
-    license="GNU Affero GPLv3",
+    license="MIT Licence",
     url="https://github.com/Marcdnd/electrum-server-cesc/",
     long_description="""Server for the Electrum Lightweight Cryptoescudo Wallet"""
 )
-
-

@@ -1,8 +1,8 @@
 Electrum-server for the Electrum client
 =========================================
 
-  * Authors: Thomas Voegtlin (ThomasV on the bitcointalk forum)
-  * Cryptoescudo features: Marcdnd (marcdnd on [cryptoescudotalk.com](http://cryptoescudotalk.com) forum)
+  * Author: Thomas Voegtlin (ThomasV on the bitcointalk forum)
+  * Port for Cryptoescudo: Marcdnd (marcdnd on cryptoescudotalk forum)
   * Language: Python
 
 Features
@@ -25,8 +25,8 @@ Features
 Installation
 ------------
 
-  1. To install and run a server, see [INSTALL](https://github.com/Marcdnd/electrum-server-cesc/blob/master/INSTALL). For greater
-     detail on the installation process, see [HOWTO.md](https://github.com/Marcdnd/electrum-server-cesc/blob/master/HOWTO.md).
+  1. To install and run a server, see INSTALL. For greater
+     detail on the installation process, see HOWTO.md.
 
   2. To start and stop the server, use the 'electrum-server-cesc' script
 
@@ -35,6 +35,5 @@ Installation
 License
 -------
 
-Electrum-server is made available under the terms of the [GNU Affero General
-Public License](http://www.gnu.org/licenses/agpl.html), version 3. See the 
-included `LICENSE` for more details.
+Electrum-server is made available under the terms of the MIT License.
+See the included `LICENSE` for more details.
