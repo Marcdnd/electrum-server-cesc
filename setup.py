@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="electrum-server-cesc", 
     version="1.0.20160803",
-    scripts=['run_electrum_cesc_server.py','electrum-server-cesc'],
+    scripts=['run_electrum_server_cesc','electrum-server-cesc'],
     install_requires=['plyvel','jsonrpclib', 'irc >= 11, <=14.0'],
     package_dir={
         'electrumservercesc':'src'
